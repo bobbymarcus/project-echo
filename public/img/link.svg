@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="12px" viewBox="0 0 26 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Toolbar / Link</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Project-Flow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard_Grid" transform="translate(-786.000000, -29.000000)">
+            <g id="Top-Bar">
+                <g id="Global-Create" transform="translate(677.000000, 20.000000)">
+                    <g id="Toolbar-/-Link" transform="translate(110.000000, 10.000000)">
+                        <g id="Link">
+                            <path d="M9.59851074,0.0288085938 C10.1639532,0.0288085938 8.81241747,0.0288085938 5.54390367,0.0288085938 C0.641132969,0.0288085938 0,2.99597168 0,4.49597168 C0,5.99597168 0.641132969,9.49597168 5.54390367,9.49597168 C8.81241747,9.49597168 10.1639532,9.49597168 9.59851074,9.49597168" id="Path-7" stroke="#D8D8D8" stroke-width="1.2" stroke-linecap="round"></path>
+                            <path d="M23.512972,0 C24.0784144,0 22.7268787,0 19.4583649,0 C14.5555942,0 13.6791097,2.96716309 13.6791097,4.46716309 C13.6791097,5.96716309 14.5555942,9.46716309 19.4583649,9.46716309 C22.7268787,9.46716309 24.0784144,9.46716309 23.512972,9.46716309" id="Path-7" stroke="#D8D8D8" stroke-width="1.2" stroke-linecap="round" transform="translate(18.658586, 4.733582) scale(-1, 1) translate(-18.658586, -4.733582) "></path>
+                            <rect id="Rectangle" fill="#D8D8D8" x="7.20678711" y="3.51916504" width="9" height="2" rx="1"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

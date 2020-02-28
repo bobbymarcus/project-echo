@@ -1,0 +1,53 @@
+/* Boilerplate code to always include */
+*,
+*:before,
+*:after {
+  /* Inherits border-box but also allows children to have unique box-sizing if required */
+  box-sizing: inherit;
+  /* padding and margin remove the default whitespace. Without these there is still whitespace even with width=100% */
+  padding: 0;
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+body {
+  overscroll-behavior: none;
+}
+body, input {
+  font-family: din-2014, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+p {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+// tooltip
+.MuiTooltip-tooltip {
+  background-color: white !important;
+  color: black !important;
+  letter-spacing: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+// fab icon
+.MuiFab-label {
+  position: absolute;
+  width: unset !important;
+  right: 30%;
+  bottom: 18%;
+  display: unset !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  background-color: rgba(0,0,0,1);
+}
+
+
+
+
+
+

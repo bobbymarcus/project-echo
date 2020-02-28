@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Toolbar / Undo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Project-Flow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Artboard_Grid" transform="translate(-858.000000, -25.000000)" stroke="#D8D8D8">
+            <g id="Top-Bar">
+                <g id="Global-Create" transform="translate(677.000000, 20.000000)">
+                    <g id="Toolbar-/-Undo" transform="translate(180.000000, 4.000000)">
+                        <g id="Undo">
+                            <path d="M8.54706338,18.1074227 C9.71390926,18.4200781 10.9119016,18.3878526 11.1629794,18.3641021 C15.2234376,17.9800063 18.4001461,14.5609833 18.4001461,10.3999999 C18.4001461,5.98172165 14.8184287,2.39999986 10.400151,2.39999986 C7.82207859,2.39999986 5.52883192,3.61948365 4.0657855,5.51307669 C3.02147583,6.86470673 2.39999986,8.55979401 2.39999986,10.3999999 C2.56206821,12.4502263 3.29549038,14.2437451 4.60026637,15.7805563" id="Oval" stroke-width="1.2" transform="translate(10.400073, 10.389147) rotate(-285.000000) translate(-10.400073, -10.389147) "></path>
+                            <polyline id="Path-4" stroke-width="1.2" points="3.55367349 2.48783236 3.55367349 6.34183603 7.35298967 6.34183603"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

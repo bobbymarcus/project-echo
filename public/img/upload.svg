@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="63px" height="47px" viewBox="0 0 63 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>upload</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Project-Flow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Artboard_Grid-Uploader" transform="translate(-762.000000, -1004.000000)" stroke="#FFFFFF" stroke-width="3">
+            <g id="Search" transform="translate(0.000000, 630.000000)">
+                <g id="Search-Bar">
+                    <g id="Cloud-Uploader" transform="translate(425.000000, 280.000000)">
+                        <g id="upload" transform="translate(339.000000, 96.000000)">
+                            <path d="M40.6806668,43.172708 C48.1643099,40.1915555 58.8751993,35.263752 58.8751993,21.3309729 C58.8751993,7.39819386 46.9854524,4.97379949e-15 38.2159694,4.97379949e-15 C29.4464864,4.97379949e-15 21.9611343,4.53256867 18.6439954,11.0106453 C18.0858411,11.0106453 17.3660168,11.0106453 14.7704112,11.0106453 C12.1748055,11.0106453 0,14.5783213 0,27.2996601 C0,40.0209988 11.152491,43.172708 15.8788585,43.172708 C20.605226,43.172708 31.9686057,41.3010282 31.9686057,22.5374039"></path>
+                            <polyline id="Path-3" points="25.8894061 27.8571308 31.9686057 22.5374039 37.6667018 27.8571308"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

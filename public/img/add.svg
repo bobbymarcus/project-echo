@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Toolbar / New Image</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Project-Flow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard_Grid" transform="translate(-677.000000, -24.000000)" fill="#EDEDED">
+            <g id="Top-Bar">
+                <g id="Global-Create" transform="translate(677.000000, 20.000000)">
+                    <g id="Toolbar-/-New-Image" transform="translate(0.000000, 4.000000)">
+                        <g id="New-Image">
+                            <path d="M10.5,0 C10.7761424,0 11,0.300064476 11,0.670212766 L11,0.670212766 L11,10 L20.3297872,10 C20.6629207,10 20.9392863,10.1813247 20.991228,10.4188974 L21,10.5 C21,10.7761424 20.6999355,11 20.3297872,11 L20.3297872,11 L11,11 L11,20.3297872 C11,20.6629207 10.8186753,20.9392863 10.5811026,20.991228 L10.5,21 C10.2238576,21 10,20.6999355 10,20.3297872 L10,20.3297872 L10,11 L0.670212766,11 C0.337079305,11 0.0607137334,10.8186753 0.00877195362,10.5811026 L0,10.5 C0,10.2238576 0.300064476,10 0.670212766,10 L0.670212766,10 L10,10 L10,0.670212766 C10,0.337079305 10.1813247,0.0607137334 10.4188974,0.00877195362 Z" id="Combined-Shape" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

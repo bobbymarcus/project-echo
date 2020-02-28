@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="22px" viewBox="0 0 14 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Toolbar / Lock</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Project-Flow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard_Grid" transform="translate(-757.000000, -24.000000)" stroke="#D8D8D8">
+            <g id="Top-Bar">
+                <g id="Global-Create" transform="translate(677.000000, 20.000000)">
+                    <g id="Toolbar-/-Lock" transform="translate(80.500000, 4.269531)">
+                        <g id="Lock-/-Unlock">
+                            <line x1="6.5" y1="13.9801274" x2="6.5" y2="16.9801274" id="Line-3" stroke-width="1.2" stroke-linecap="round"></line>
+                            <path d="M10.4956913,10.0445805 L10.4956913,3.12199787 C10.3775348,1.36075086 9.68189628,0.480127353 8.40877573,0.480127353 C6.49909491,0.480127353 6.48120661,0.480127353 4.56281955,0.480127353 C3.28389484,0.480127353 2.5948521,1.36075086 2.49569132,3.12199787 L2.49569132,6.27763752" id="Path-8" stroke-width="1.2" stroke-linecap="round"></path>
+                            <path d="M9,10.0801274 L4,10.0801274 C3.06111593,10.0801274 2.21111593,10.4606853 1.59583694,11.0759643 C0.980557963,11.6912433 0.6,12.5412433 0.6,13.4801274 L1,20.8801274 L12.4,20.4801274 L12.4,13.4801274 C12.4,12.5412433 12.019442,11.6912433 11.4041631,11.0759643 C10.7888841,10.4606853 9.93888407,10.0801274 9,10.0801274 Z" id="Rectangle" stroke-width="1.2"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
