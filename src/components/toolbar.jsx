@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import styled from "styled-components";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
+import FabOpen from "./fabOpen";
 
 const ToolbarWrapper = styled.div`
   position: fixed;
@@ -45,23 +46,23 @@ export default class Toolbar extends PureComponent {
       <ToolbarWrapper>
         <ToolbarIcons>
           <Tooltip title="Add" TransitionComponent={Zoom}>
-            <img src="img/add.svg" alt="" />
+            <img onClick={FabOpen} src="img/toolbar/add.svg" alt="" />
           </Tooltip>
           <Tooltip title="Grid" TransitionComponent={Zoom}>
-            <img src="img/grid.svg" alt="" />
+            <img src="img/toolbar/grid.svg" alt="" />
           </Tooltip>
           <Tooltip title="Lock" TransitionComponent={Zoom}>
-            <img src="img/lock.svg" alt="" />
+            <img src="img/toolbar/lock.svg" alt="" />
           </Tooltip>
           <Tooltip title="Link" TransitionComponent={Zoom}>
-            <img src="img/link.svg" alt="" />
+            <img src="img/toolbar/link.svg" alt="" />
           </Tooltip>
-          <img src="img/divider.svg" alt="" />
+          <img src="img/toolbar/divider.svg" alt="" />
           <Tooltip title="Undo" TransitionComponent={Zoom}>
-            <img src="img/undo.svg" alt="" />
+            <img src="img/toolbar/undo.svg" alt="" />
           </Tooltip>
           <Tooltip title="Redo" TransitionComponent={Zoom}>
-            <img src="img/redo.svg" alt="" />
+            <img src="img/toolbar/redo.svg" alt="" />
           </Tooltip>
         </ToolbarIcons>
         <ToolbarRight src="img/toolbarRight.svg" />

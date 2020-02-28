@@ -1,8 +1,10 @@
-import React, { useEffect, useRef, PureComponent } from "react";
+import React, { useEffect, useRef, PureComponent, useCallback } from "react";
 import RGL, { WidthProvider } from "react-grid-layout";
 import styled from "styled-components";
+import { useDropzone } from "react-dropzone";
 
 const ReactGridLayout = WidthProvider(RGL);
+
 
 // styled components
 const Container = styled.div`
@@ -42,8 +44,6 @@ const Board = styled.div`
 const Item = styled.div`
   font-size: 40px;
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
   border-radius: 15px;
   border: 10px solid white;
   flex-direction: column;
@@ -57,9 +57,9 @@ const Item = styled.div`
 const ItemImage = styled.img`
   /* background-image: url(${({ src }) => src});
   background-size: cover;
-  background-repeat: no-repeat; */
+  background-repeat: no-repeat;
+  align-items: center; */
   justify-content: center;
-  /* align-items: center; */
   display: flex;
   height: calc(100% + 500px);
   width: 100%;
@@ -76,8 +76,10 @@ const ItemComment = styled.textarea`
   font-weight: 600;
   color: #1B1825;
   display: flex;
-  padding: 15px 15px 30px;
+  padding: 20px 15px 30px;
   border: none;
+  overflow: hidden;
+  pointer-events: auto;
   &::placeholder {
     color: rgba(0, 0, 0, 0.2);
   }
@@ -85,6 +87,56 @@ const ItemComment = styled.textarea`
     outline-style: none;
   }
 `;
+
+
+// const DropzoneContainer = styled.div`
+//   position: fixed;
+//   width: 100%;
+//   height: 40%;
+//   left: 50%;
+//   bottom: 0;
+//   padding: 8% 0 0 0;
+//   transform: translateX(-50%);
+//   z-index: 2;
+//   text-align: center;
+//   visibility: hidden;
+//   pointer-events: none;
+//   & p {
+//     color: white;
+//     font-size: 24px;
+//     pointer-events: auto;
+//   }
+//   & span {
+//     cursor: pointer;
+//     border-bottom: 3px solid white;
+//   }
+//   & span:hover {
+//     color: grey;
+//     border-color: grey;
+//   }
+// `;
+// const DropzoneIcon = styled.img`
+//   margin-bottom: 30px;
+// `;
+
+// function Dropzone() {
+//   const onDrop = useCallback(acceptedFiles => {
+//     // Do something with the files
+//     {this.renderGridItems()}
+//   }, []);
+//   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+//   return (
+//     <DropzoneContainer id="dropzone" {...getRootProps()}>
+//       <DropzoneIcon src="img/upload.svg" />
+//       <input {...getInputProps()} />
+//       {isDragActive ? (
+//         <p>Drop the files here ...</p>
+//       ) : (
+//         <p> <span>Choose files</span> or drag them here </p>
+//       )}
+//     </DropzoneContainer>
+//   );
+// }
 
 export default class Grid extends PureComponent {
   state = {
@@ -106,8 +158,7 @@ export default class Grid extends PureComponent {
     const { w: afterWidth } = after;
     after.h = aspectRatio * afterWidth;
   };
-  keepInBounds = layout => {
-    // sometimes the grid layout gives items a negative y-value so they go out of bounds. This corrects for that.
+  keepInBounds = layout => {     // sometimes the grid layout gives items a negative y-value so they go out of bounds. This corrects for that.
     const newLayout = layout.map(obj => {
       const copiedObject = { ...obj };
       if (obj.y < 0) obj.y = 0;
@@ -120,9 +171,9 @@ export default class Grid extends PureComponent {
     const { data } = this.props;
     return data.map(obj => {
       const { width, height, x, y, src, key } = obj;
-      const height2 = height + 200;
+      const height2 = height + 300;
       return (
-        <Item
+        <Item 
           key={key}
           data-grid={{
             w: 1,
@@ -131,9 +182,9 @@ export default class Grid extends PureComponent {
             y
           }}
         >
-          <ItemImage src={src} />
+          <ItemImage src={src}  />
           <ItemComment placeholder="Add note" />
-        </Item>
+       </Item>
       );
     });
   };
@@ -152,11 +203,13 @@ export default class Grid extends PureComponent {
               onResize={(...args) => this.handleResize(...args)}
               onLayoutChange={this.keepInBounds}
               onDrag={this.keepInBounds}
+              draggableCancel="textarea"
             >
               {this.renderGridItems()}
             </ReactGridLayout>
           </Board>
         </BoardWrapper>
+        {/* <Dropzone /> */}
       </Container>
     );
   }

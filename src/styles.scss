@@ -43,7 +43,24 @@ p {
   display: unset !important;
   align-items: unset !important;
   justify-content: unset !important;
-  background-color: rgba(0,0,0,1);
+  z-index: 3;
+  pointer-events: none;
+  cursor: pointer;
+  & img {
+    // pointer-events: none;
+  }
+  & div {
+    pointer-events: auto;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 30px;
+    left: -90%;
+    top: -70%;
+  }
+}
+.fjzbHS, .kerQIG {
+  visibility: hidden;
 }
 
 
