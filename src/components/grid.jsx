@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 const BoardWrapper = styled.div`
   position: absolute;
-  top: 15%;
+  top: 12%;
   width: ${({ gridWidth }) => 100 * gridWidth}%;
   left: 50%;
   transform: translateX(-50%);
@@ -55,7 +55,7 @@ const Item = styled.div`
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
     border: 10px solid white;
     & .grid-item-hover {
-      display: none;
+      opacity: 0;
     }
   }
   & span {
@@ -115,6 +115,9 @@ const ItemHover = styled.div`
     transform: translateY(60px);
     cursor: pointer;
   }
+  &:active {
+    opacity: 1 !important;
+  }
 `;
 
 export default class Grid extends PureComponent {
@@ -152,7 +155,7 @@ export default class Grid extends PureComponent {
       const { width, height, x, y, src, key } = obj;
       const height2 = height + 300;
       return (
-        <Item 
+        <Item
           key={key}
           data-grid={{
             w: 1,

@@ -20,7 +20,7 @@ const App = () => {
   const cols = 5; // number of columns
 
   // componentDidMount
-  useEffect(() => { 
+  useEffect(() => {
     window.addEventListener("resize", () => {
       setWidth(window.innerWidth);
     });
@@ -42,7 +42,7 @@ const App = () => {
 
   const margin = 0; // px
   const marginArray = [margin, margin]; // [x,y]
-  const gridWidth = 0.8; // % screen width to assign to grid
+  const gridWidth = 0.7; // % screen width to assign to grid
   const colWidth = (gridWidth * (width - (cols + 1) * margin)) / cols;   // the colWidth is the total window width divided by number of columns. Also accounts for the margins.   // the rowHeight is set equal to the colWidth
 
   return (

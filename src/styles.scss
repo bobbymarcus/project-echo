@@ -62,15 +62,12 @@ p {
 // .fjzbHS, .kerQIG {
 //   visibility: hidden;
 // }
+.react-grid-item {
+  visibility: hidden;
+}
 
 .dropzoneActive {
-  width: 100%;
-  height: 100%;
-  background-color: blue;
-  top: 0;
-  position: absolute;
-  z-index: -1;
-  opacity: 0.4;
+  box-shadow: 0 0 50px 10px rgba(0,0,0,1);
 }
 
 .react-grid-item > .react-resizable-handle {
@@ -81,14 +78,14 @@ p {
   bottom: 65px;
   padding: 10px;
   cursor: se-resize;
-  background-image: url("img/resize.svg");
+  background-image: url("/img/resize.svg");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity .3s;
   // mix-blend-mode: difference;
   // filter: invert(1);
-} 
+}
 .react-grid-item > .react-resizable-handle::after {
   position: absolute;
   width: 0;
@@ -113,9 +110,3 @@ p {
   opacity: 1;
   transition: all .2s;
 }
-
-
-
-
-
-

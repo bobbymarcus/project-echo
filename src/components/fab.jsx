@@ -8,8 +8,6 @@ import { useDropzone } from "react-dropzone";
 import { gsap, Power2 } from "gsap";
 
 
-
-
 const fabStyle = {
   margin: 0,
   top: "auto",
@@ -22,16 +20,15 @@ const fabStyle = {
 };
 const DropzoneContainer = styled.div`
   position: fixed;
-  width: 100%;
-  height: 40%;
+  width: 40%;
+  padding: 4% 0 3% 0;
   left: 50%;
   bottom: 0;
-  padding: 8% 0 0 0;
   transform: translateX(-50%);
   z-index: 2;
   text-align: center;
   visibility: hidden;
-  pointer-events: none;
+  cursor: pointer;
   & p {
     color: white;
     font-size: 24px;
@@ -45,20 +42,32 @@ const DropzoneContainer = styled.div`
     color: grey;
     border-color: grey;
   }
+  &:focus {
+    outline-style: none;
+  }
 `;
 const DropzoneIcon = styled.img`
   margin-bottom: 30px;
 `;
+const DropzoneCloud = styled.img`
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40vw;
+`;
+
 var addItem = gsap.timeline();
 
 function Dropzone(props) {
   const onDrop = useCallback(files => {
     // Do something with the files
-    
+
     const temporaryURL = files;
-    
-    addItem.to(".fjzbHS", 0.3, { autoAlpha: "1" }, 0)
-          .to(".kerQIG", 0.3, {autoAlpha: "1"});
+
+    addItem.to(".react-grid-item", 0.3, { autoAlpha: "1" }, 0);
+    FabOpen();
+          // .to(".kerQIG", 0.3, {autoAlpha: "1"});
           // .set(".fjzbHS",{attr:{src:{temporaryURL}}});
     addItem.play();
   }, []);
@@ -69,13 +78,14 @@ function Dropzone(props) {
       <input {...getInputProps()} />
       {isDragActive ? (
         <React.Fragment>
-          <p>Drop the files here</p>
-          <div class="dropzoneActive"> </div>
+          <DropzoneCloud class="dropzoneActive" src="img/cloud2.svg" />
+          <p>Add images by dropping them here</p>
         </React.Fragment>
       ) : (
-        <p>
-          <span>Choose files</span> or drag them here
-        </p>
+        <React.Fragment>
+          <p><span>Choose files</span> or drag them here</p>
+          <DropzoneCloud src="img/cloud.svg" />
+        </React.Fragment>
       )}
     </DropzoneContainer>
   );
