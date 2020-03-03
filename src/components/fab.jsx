@@ -68,7 +68,10 @@ function Dropzone(props) {
       <DropzoneIcon src="img/upload.svg" />
       <input {...getInputProps()} />
       {isDragActive ? (
-        <p>Drop the files here ...</p>
+        <React.Fragment>
+          <p>Drop the files here</p>
+          <div class="dropzoneActive"> </div>
+        </React.Fragment>
       ) : (
         <p>
           <span>Choose files</span> or drag them here
