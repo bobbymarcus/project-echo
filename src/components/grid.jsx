@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, PureComponent, useCallback } from "react";
 import RGL, { WidthProvider } from "react-grid-layout";
 import styled from "styled-components";
-
+import Tooltip from "@material-ui/core/Tooltip";
+import Zoom from "@material-ui/core/Zoom";
+import { useDropzone } from "react-dropzone";
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -14,7 +16,7 @@ const Container = styled.div`
 `;
 const BoardWrapper = styled.div`
   position: absolute;
-  top: 12%;
+  top: 15%;
   width: ${({ gridWidth }) => 100 * gridWidth}%;
   left: 50%;
   transform: translateX(-50%);
@@ -25,10 +27,10 @@ const BoardTitle = styled.input`
   color: #000;
   border: none;
   background: rgba(0, 0, 0, 0);
-  padding-bottom: 24px;
+  padding-bottom: 28px;
   width: 100%;
   &::placeholder {
-    color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.3);
   }
   &:focus {
     outline-style: none;
@@ -50,6 +52,7 @@ const Item = styled.div`
   flex-direction: column;
   background: #fff;
   cursor: grab;
+  /* min-height: 250px; */
   &:active {
     cursor: grabbing;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
@@ -85,7 +88,7 @@ const ItemComment = styled.textarea`
   font-size: 16px;
   font-family: din-2014, sans-serif;
   font-weight: 600;
-  color: #CCCCCC ;
+  color: #1B1825 ;
   display: flex;
   margin: 15px 25% 0 5%;
   border: none;
@@ -111,14 +114,34 @@ const ItemHover = styled.div`
     opacity: 0;
     transition: all .2s;
     width: 40px;
-    margin: 20px 10px;
+    margin: 5px 10px;
     transform: translateY(60px);
     cursor: pointer;
   }
   &:active {
     opacity: 1 !important;
   }
+  & div {
+    &:focus {
+      outline-style: none;
+    }
+  }
 `;
+
+function Dropzone(props) {
+  const onDrop = useCallback(files => {
+
+  }, []);
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  return (
+    <div {...getRootProps()}>
+      <Tooltip title="Replace" TransitionComponent={Zoom}>
+        <img className="gridItemBtn" src="img/replaceBtn.svg" />
+      </Tooltip>
+      <input {...getInputProps()} />
+    </div>
+  );
+};
 
 export default class Grid extends PureComponent {
   state = {
@@ -149,6 +172,7 @@ export default class Grid extends PureComponent {
     this.setState({ layout: newLayout });
     return newLayout;
   };
+
   renderGridItems = () => {
     const { data } = this.props;
     return data.map(obj => {
@@ -159,7 +183,7 @@ export default class Grid extends PureComponent {
           key={key}
           data-grid={{
             w: 1,
-            h: height2 / width,
+            h: height / width,
             x,
             y
           }}
@@ -168,8 +192,12 @@ export default class Grid extends PureComponent {
           <ItemComment placeholder="Add note" />
           <span />
           <ItemHover className="grid-item-hover">
-            <img src="img/replaceBtn.svg" />
-            <img src="img/deleteBtn.svg" />
+            <Dropzone />
+              <div>
+              <Tooltip title="Delete" TransitionComponent={Zoom}>
+                <img className="gridItemBtn" src="img/deleteBtn.svg" />
+                </Tooltip>
+              </div>
           </ItemHover>
        </Item>
       );

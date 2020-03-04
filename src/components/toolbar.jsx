@@ -2,7 +2,8 @@ import React, { PureComponent } from "react";
 import styled from "styled-components";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
-import FabOpen from "./fabOpen";
+import {FabOpen} from "./fab";
+import { gsap, Power2 } from "gsap";
 
 const ToolbarWrapper = styled.div`
   position: fixed;
@@ -40,6 +41,13 @@ const ToolbarLeft = styled.p`
   margin: 0;
 `;
 
+function addItemsDemo() {
+  var addItems = gsap.timeline();
+  addItems.staggerTo(".react-grid-item", 0.2, { autoAlpha: "1", stagger:0.05 });
+  addItems.play();
+}
+
+
 export default class Toolbar extends PureComponent {
   render() {
     return (
@@ -61,7 +69,7 @@ export default class Toolbar extends PureComponent {
           <Tooltip title="Undo" TransitionComponent={Zoom}>
             <img src="img/toolbar/undo.svg" alt="" />
           </Tooltip>
-          <Tooltip title="Redo" TransitionComponent={Zoom}>
+          <Tooltip onClick={addItemsDemo} title="Redo" TransitionComponent={Zoom}>
             <img src="img/toolbar/redo.svg" alt="" />
           </Tooltip>
         </ToolbarIcons>

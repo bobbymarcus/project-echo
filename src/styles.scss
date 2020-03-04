@@ -1,3 +1,10 @@
+@font-face {
+font-family: 'DIN Alternate Bold';
+font-style: normal;
+font-weight: normal;
+src: local('DIN Alternate Bold'), url('DINAlternate-Bold.woff') format('woff');
+}
+
 /* Boilerplate code to always include */
 *,
 *:before,
@@ -16,9 +23,7 @@ body {
   overscroll-behavior: none;
 }
 body, input {
-  font-family: din-2014, sans-serif;
-  font-weight: 600;
-  font-style: normal;
+  font-family: 'DIN Alternate Bold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -46,9 +51,6 @@ p {
   z-index: 3;
   pointer-events: none;
   cursor: pointer;
-  & img {
-    // pointer-events: none;
-  }
   & div {
     pointer-events: auto;
     height: 100%;
@@ -59,13 +61,6 @@ p {
     top: -70%;
   }
 }
-// .fjzbHS, .kerQIG {
-//   visibility: hidden;
-// }
-.react-grid-item {
-  visibility: hidden;
-}
-
 .dropzoneActive {
   box-shadow: 0 0 50px 10px rgba(0,0,0,1);
 }
@@ -109,4 +104,11 @@ p {
 .react-grid-item:hover > span {
   opacity: 1;
   transition: all .2s;
+}
+
+
+
+// demo purposes only
+.react-grid-item {
+  opacity: 0;
 }

@@ -7,7 +7,7 @@ import "./resizable.scss";
 
 // components
 import Grid from "../grid";
-import AddBtn from "../fab";
+import { FabAdd } from "../fab";
 import Toolbar from "../toolbar";
 
 // data
@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <AddBtn />
+      <FabAdd />
       <Toolbar />
       <Grid
         cols={cols}
