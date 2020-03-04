@@ -11,7 +11,6 @@ import { FabAdd } from "../fab";
 import Toolbar from "../toolbar";
 
 // data
-// import firebase from "./config.js";
 import dummyData from "../../dummyData.json";
 
 const App = () => {
@@ -43,7 +42,9 @@ const App = () => {
   const margin = 0; // px
   const marginArray = [margin, margin]; // [x,y]
   const gridWidth = 0.7; // % screen width to assign to grid
-  const colWidth = (gridWidth * (width - (cols + 1) * margin)) / cols;   // the colWidth is the total window width divided by number of columns. Also accounts for the margins.   // the rowHeight is set equal to the colWidth
+  // the colWidth is the total window width divided by number of columns. Also accounts for the margins.
+   // the rowHeight is set equal to the colWidth
+  const colWidth = (gridWidth * (width - (cols + 1) * margin)) / cols;
 
   return (
     <React.Fragment>

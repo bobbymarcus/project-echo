@@ -74,7 +74,7 @@ export default class Toolbar extends PureComponent {
           </Tooltip>
         </ToolbarIcons>
         <ToolbarRight src="img/toolbarRight.svg" />
-        <ToolbarLeft>D03 PF2020</ToolbarLeft>
+        <ToolbarLeft>Women's retail spring 2021</ToolbarLeft>
       </ToolbarWrapper>
     );
   }
