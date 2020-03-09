@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
 import uuid from "uuid";
-
-// css
-import "./grid-layout.scss";
-import "./resizable.scss";
+import styled from "styled-components";
 
 // components
-import Grid from "../grid";
-import { FabAdd } from "../fab";
-import Toolbar from "../toolbar";
+import Board from "../components/Board";
+import Grid from "../components/Grid/Grid";
+import { AddImagesFab } from "../components/Fab";
+import Toolbar from "../components/Toolbar";
+
+// css
+import "../components/Grid/grid-layout.scss";
+import "../components/Grid/resizable.scss";
 
 // data
-import dummyData from "../../dummyData.json";
+import dummyData from "../dummyData.json";
 
-const App = () => {
+const GreyBackground = styled.div`
+  background-color: #f9f9f9;
+`;
+
+const EditMode = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [data, setData] = useState([]);
   const cols = 5; // number of columns
@@ -47,19 +53,20 @@ const App = () => {
   const colWidth = (gridWidth * (width - (cols + 1) * margin)) / cols;
 
   return (
-    <React.Fragment>
-      <FabAdd />
+    <GreyBackground>
+      <AddImagesFab />
       <Toolbar />
-      <Grid
-        cols={cols}
-        colWidth={colWidth}
-        gridWidth={gridWidth}
-        rowHeight={colWidth}
-        data={data}
-        margin={marginArray}
-      />
-    </React.Fragment>
+      <Board gridWidth={gridWidth}>
+        <Grid
+          cols={cols}
+          colWidth={colWidth}
+          rowHeight={colWidth}
+          data={data}
+          margin={marginArray}
+        />
+      </Board>
+    </GreyBackground>
   );
 };
 
-export default App;
+export default EditMode;

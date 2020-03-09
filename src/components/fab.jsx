@@ -1,12 +1,22 @@
 import React, { PureComponent, useCallback } from "react";
 import styled from "styled-components";
-import Fab from "@material-ui/core/Fab";
-import Tooltip from "@material-ui/core/Tooltip";
-import Zoom from "@material-ui/core/Zoom";
-import { useDropzone } from "react-dropzone";
 import { gsap, Power2 } from "gsap";
+import { useDropzone } from "react-dropzone";
 
+// components
+import Fab from "@material-ui/core/Fab";
+import ToolTip from "./ToolTip";
 
+const fabStyle = {
+  margin: 0,
+  top: "auto",
+  right: "4%",
+  bottom: 30,
+  left: "auto",
+  position: "fixed",
+  backgroundColor: "black",
+  zIndex: "1"
+};
 const DropzoneContainer = styled.div`
   position: fixed;
   width: 50%;
@@ -28,7 +38,6 @@ const DropzoneContainer = styled.div`
     border-bottom: 3px solid white;
     padding-bottom: 6px;
   }
-
   & span:hover {
     color: #5368FF;
     border-color: #5368FF;
@@ -50,11 +59,11 @@ const DropzoneCloud = styled.img`
 `;
 
 
-
-var drawerOpen = false;
-export function FabOpen() {
+// fab open/close animation
+var fabOpenClose = false;
+export function FabOpenClose() {
   var fabTimeline = gsap.timeline();
-  if (drawerOpen === false) { // if drawer is closed -> open it
+  if (fabOpenClose === false) { // if drawer is closed -> open it
     fabTimeline.to(".MuiFab-primary", 0.3, {
           backgroundColor: "rgba(0,0,0,.95)",
           width: "100vw",
@@ -65,13 +74,11 @@ export function FabOpen() {
           cursor: "unset",
           ease: Power2.easeInOut}, 0 )
       .to("#dropzone", 0.3, {autoAlpha: "1"})
-      // .to(".fabHotspot", 0, { display: "block" }, 0)
-      .to(".MuiTooltip-tooltip", 0, { display: "none" }, 0)
-      .to(".MuiFab-label", 0, { pointerEvents: "all", right: "5%", bottom: "11.5%" }, 0)
       .to(".MuiTouchRipple-root", 0, { autoAlpha: "0"}, 0)
+      .to(".MuiFab-label", 0, { pointerEvents: "all", right: "5%", bottom: "11.5%" }, 0)
       .to(".MuiFab-label", 0.2, { transform: "rotate(45deg)", bottom: "80%", ease: Power2.easeInOut }, 0);
     fabTimeline.play();
-    drawerOpen = true;
+    fabOpenClose = true;
   } else { // if drawer is open -> close it
     fabTimeline.to(".MuiFab-primary", 0.15, {
           backgroundColor: "rgba(0,0,0,1)",
@@ -83,24 +90,18 @@ export function FabOpen() {
           cursor: "pointer",
           ease: Power2.easeInOut}, 0)
       .to("#dropzone", 0.15, {autoAlpha: "0"}, 0)
-      // .to(".fabHotspot", 0, { display: "none" }, 0)
-      .to(".MuiFab-label", 0, { right: "5%" }, 0)
       .to(".MuiTouchRipple-root", 0, { autoAlpha: "1"}, 0)
-      .to(".MuiFab-label", 0.15, {transform: "rotate(0deg)", bottom: "18%", right: "17px", ease: Power2.easeInOut}, 0)
-      .to(".MuiTooltip-tooltip", 0, { autoAlpha: "1", delay: "1" });
+      .to(".MuiFab-label", 0, { right: "5%" }, 0)
+      .to(".MuiFab-label", 0.15, {transform: "rotate(0deg)", bottom: "18%", right: "17px", ease: Power2.easeInOut}, 0);
     fabTimeline.play();
-    drawerOpen = false;
+    fabOpenClose = false;
   }
 };
 
-
+// file upload
 function Dropzone(props) {
-  var addItems = gsap.timeline();
   const onDrop = useCallback(files => {
-      // Do something with the files
-    addItems.staggerTo(".react-grid-item", 0.2, { autoAlpha: "1", stagger:0.05 });
-    addItems.play();
-    FabOpen();
+      // Do something with the files on upload
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
   return (
@@ -122,26 +123,15 @@ function Dropzone(props) {
   );
 }
 
-const fabStyle = {
-  margin: 0,
-  top: "auto",
-  right: "4%",
-  bottom: 30,
-  left: "auto",
-  position: "fixed",
-  backgroundColor: "black",
-  zIndex: "1"
-};
-export class FabAdd extends PureComponent {
+export class AddImagesFab extends PureComponent {
   render() {
     return (
       <React.Fragment>
           <Fab style={fabStyle} color="primary" aria-label="add">
-            <div className="fabHotspot" onClick={FabOpen}></div>
-            <Tooltip title="Add" TransitionComponent={Zoom}>
-            <img onClick={FabOpen} src="img/fab.svg" alt="" />
-            </Tooltip>
-
+          <ToolTip title="">
+            <div className="fabHotspot" onClick={FabOpenClose}></div>
+            </ToolTip>
+            <img onClick={FabOpenClose} src="img/fab.svg" alt="" />
           </Fab>
         <Dropzone />
       </React.Fragment>

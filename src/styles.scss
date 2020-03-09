@@ -1,3 +1,4 @@
+
 @font-face {
 font-family: 'DIN Alternate Bold';
 font-style: normal;
@@ -5,19 +6,16 @@ font-weight: normal;
 src: local('DIN Alternate Bold'), url('DINAlternate-Bold.woff') format('woff');
 }
 
-/* Boilerplate code to always include */
 *,
 *:before,
 *:after {
-  /* Inherits border-box but also allows children to have unique box-sizing if required */
   box-sizing: inherit;
-  /* padding and margin remove the default whitespace. Without these there is still whitespace even with width=100% */
   padding: 0;
   margin: 0;
 }
 html {
   box-sizing: border-box;
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
 body {
   overscroll-behavior: none;
@@ -26,20 +24,26 @@ body, input {
   font-family: 'DIN Alternate Bold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: normal;
 }
 p {
   font-size: 16px;
   letter-spacing: 1px;
 }
 
-// tooltip
+// @material-ui/core/Tooltip
 .MuiTooltip-tooltip {
   background-color: white !important;
   color: black !important;
   letter-spacing: 1px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  & .MuiTooltip-arrow {
+    color: white !important;
+    position: absolute;
+    font-size: 6px;
+  }
 }
-// fab icon
+// @material-ui/core/Fab
 .MuiFab-label {
   position: absolute;
   width: unset !important;
@@ -61,54 +65,7 @@ p {
     top: -70%;
   }
 }
+
 .dropzoneActive {
   box-shadow: 0 0 50px 10px rgba(0,0,0,1);
-}
-
-.react-grid-item > .react-resizable-handle {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  right: 0;
-  bottom: 65px;
-  padding: 10px;
-  cursor: se-resize;
-  background-image: url("/img/resize.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity .3s;
-  // mix-blend-mode: difference;
-  // filter: invert(1);
-}
-.react-grid-item > .react-resizable-handle::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-right: 2px solid rgba(0, 0, 0, 0);
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
-}
-
-.react-grid-item:hover > .react-resizable-handle {
-  opacity: 1;
-}
-.react-grid-item:hover > .grid-item-hover img {
-  opacity: 1;
-  transform: translateY(0px);
-  transition: all .2s;
-  overflow: visible;
-}
-.grid-item-hover img:hover {
-  transform: scale(1.1) !important;
-}
-.react-grid-item:hover > span {
-  opacity: 1;
-  transition: all .2s;
-}
-
-
-
-// demo purposes only
-.react-grid-item {
-  opacity: 0;
 }
